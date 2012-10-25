@@ -1,4 +1,4 @@
-Frontend_Links_Manager-0.1.0/frontend/default/default/layout/xmllinks.xml app/design/frontend/default/default/layout/xmllinks.xml
-Frontend_Links_Manager-0.1.0/frontend/default/default/template/xmllinks app/design/frontend/default/default/template/xmllinks
-Frontend_Links_Manager-0.1.0/MagePsycho app/code/local/MagePsycho
-Frontend_Links_Manager-0.1.0/modules/MagePsycho_Xmllinks.xml app/etc/modules/MagePsycho_Xmllinks.xml
+frontend/default/default/layout/xmllinks.xml app/design/frontend/default/default/layout/xmllinks.xml
+frontend/default/default/template/xmllinks app/design/frontend/default/default/template/xmllinks
+MagePsycho app/code/local/MagePsycho
+modules/MagePsycho_Xmllinks.xml app/etc/modules/MagePsycho_Xmllinks.xml
