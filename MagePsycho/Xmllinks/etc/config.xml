@@ -3,7 +3,7 @@
 /**
  * @category   MagePsycho
  * @package    MagePsycho_Xmllinks
- * @author     info@magepsycho.com
+ * @author     magepsycho@gmail.com
  * @website    http://www.magepsycho.com
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
@@ -11,7 +11,7 @@
 <config>
     <modules>
         <MagePsycho_Xmllinks>
-            <version>0.1.0</version>
+            <version>0.2.0</version>
         </MagePsycho_Xmllinks>
     </modules>
     <global>
@@ -29,11 +29,6 @@
                     <account_navigation>MagePsycho_Xmllinks_Block_Account_Navigation</account_navigation>
                 </rewrite>
             </customer>
-			<!--<checkout>
-				<rewrite>
-					<links>MagePsycho_Xmllinks_Block_Checkout_Links</links>
-				</rewrite>
-			</checkout>-->
         </blocks>
         <helpers>
             <xmllinks>
@@ -87,6 +82,7 @@
         <xmllinks>
             <option>
                 <active>1</active>
+				<enable_log>1</enable_log>
             </option>
 			<top_links>
 				<my_account>0</my_account>
@@ -112,11 +108,18 @@
 				<my_product_reviews>0</my_product_reviews>
 				<my_tags>0</my_tags>
 				<my_wishlist>0</my_wishlist>
+				<my_applications>0</my_applications>
 				<my_downloadable_products>0</my_downloadable_products>
 				<newsletter_subscriptions>0</newsletter_subscriptions>
+				<logout>0</logout>
+				<store_credit>0</store_credit>
+				<gift_card>0</gift_card>
+				<gift_registry>0</gift_registry>
+				<reward_points>0</reward_points>
+				<my_invitations>0</my_invitations>
 			</customer_navigation>
 			<catalog_navigation>
-                <home_active>1</home_active>
+                <home_active>0</home_active>
                 <home_label>Home</home_label>
             </catalog_navigation>
         </xmllinks>

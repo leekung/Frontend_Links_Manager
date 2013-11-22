@@ -2,9 +2,13 @@
 <layout>
 	<default>
 
-		<remove name="catalog.topnav" />
 		<reference name="top.menu">
-			<block type="catalog/navigation" name="catalog.topnav.xmllinks" template="xmllinks/catalog/navigation/top.phtml"/>
+			<action method="unsetChild"><child>catalog.topnav</child></action>
+			<block type="catalog/navigation" name="catalog.topnav.xmllinks" template="catalog/navigation/top.phtml"/>
+        </reference>
+
+		<reference name="catalog.topnav.xmllinks">
+			<action method="setTemplate" ifconfig="xmllinks/catalog_navigation/home_active"><template>xmllinks/catalog/navigation/top.phtml</template></action>
 		</reference>
 
 		<reference name="top.links">
@@ -14,7 +18,7 @@
 		</reference>
 
 		<reference name="wishlist_link">
-            <action method="setTemplate" ifconfig="xmllinks/top_links/my_wishlist"><template>blank-link.phtml</template></action>
+            <action method="setTemplate" ifconfig="xmllinks/top_links/my_wishlist"><template>xmllinks/blank-link.phtml</template></action>
         </reference>
 
 		<reference name="footer_links">
@@ -22,6 +26,11 @@
             <action method="removeLinkByUrl" ifconfig="xmllinks/footer_links/search_terms"><url helper="catalogsearch/getSearchTermUrl" /></action>
             <action method="removeLinkByUrl" ifconfig="xmllinks/footer_links/advanced_search"><url helper="catalogsearch/getAdvancedSearchUrl" /></action>
 			<action method="removeLinkByUrl" ifconfig="xmllinks/footer_links/contact_us"><url helper="xmllinks/getUrl"><url>contacts</url></url></action>
+
+			<reference name="return_link">
+				<action method="setTemplate" ifconfig="xmllinks/footer_links/return_link"><template>xmllinks/blank-link.phtml</template></action>
+			</reference>
+			<action method="removeLinkByUrl" ifconfig="xmllinks/footer_links/rss"><url helper="xmllinks/getUrl"><url>rss</url></url></action>
 		</reference>
 
 		<reference name="footer">
@@ -37,12 +46,20 @@
             <action method="removeLinkByName" ifconfig="xmllinks/customer_navigation/my_orders"><name>orders</name></action>
             <action method="removeLinkByName" ifconfig="xmllinks/customer_navigation/my_tags"><name>tags</name></action>
             <action method="removeLinkByName" ifconfig="xmllinks/customer_navigation/my_wishlist"><name>wishlist</name></action>
+			<action method="removeLinkByName" ifconfig="xmllinks/customer_navigation/my_applications"><name>OAuth Customer Tokens</name></action>
 
             <action method="removeLinkByName" ifconfig="xmllinks/customer_navigation/recurring_profiles"><name>recurring_profiles</name></action>
             <action method="removeLinkByName" ifconfig="xmllinks/customer_navigation/billing_agreements"><name>billing_agreements</name></action>
             <action method="removeLinkByName" ifconfig="xmllinks/customer_navigation/my_downloadable_products"><name>downloadable_products</name></action>
             <action method="removeLinkByName" ifconfig="xmllinks/customer_navigation/my_product_reviews"><name>reviews</name></action>
             <action method="removeLinkByName" ifconfig="xmllinks/customer_navigation/newsletter_subscriptions"><name>newsletter</name></action>
+			<action method="addLink" translate="label" module="xmllinks" ifconfig="xmllinks/customer_navigation/logout" after="-"><name>logout</name><path>customer/account/logout</path><label>Log Out</label></action>
+
+			 <action method="removeLinkByName" ifconfig="xmllinks/customer_navigation/store_credit"><name>enterprise_customerbalance</name></action>
+			 <action method="removeLinkByName" ifconfig="xmllinks/customer_navigation/gift_card"><name>enterprise_giftcardaccount</name></action>
+			 <action method="removeLinkByName" ifconfig="xmllinks/customer_navigation/gift_registry"><name>giftregistry</name></action>
+			 <action method="removeLinkByName" ifconfig="xmllinks/customer_navigation/reward_points"><name>enterprise_reward</name></action>
+			 <action method="removeLinkByName" ifconfig="xmllinks/customer_navigation/my_invitations"><name>invitations</name></action>
         </reference>
     </customer_account>
 	<customer_logged_out>
