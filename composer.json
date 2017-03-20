@@ -1,0 +1,33 @@
+{
+    "name": "isamare/frontend_links_manager",
+    "license": "OSL-3.0",
+    "type": "magento-module",
+    "description": "Frontend Links Manager extension is used to turn on/off the frontend links(top links, footer links, customer navigation links & catalog navigation links) is easier way via backend.",
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "require-dev":{
+        "phpunit/phpunit":"*",
+        "composer/composer":"*@dev"
+    },
+    "extra": {
+        "map": [
+            [
+                "frontend/default/default/layout/xmllinks.xml",
+                "app/design/frontend/default/default/layout/xmllinks.xml"
+            ],
+            [
+                "frontend/default/default/template/xmllinks",
+                "app/design/frontend/default/default/template/xmllinks"
+            ],
+            [
+                "MagePsycho",
+                "app/code/local/MagePsycho"
+            ],
+            [
+                "modules/MagePsycho_Xmllinks.xml",
+                "app/etc/modules/MagePsycho_Xmllinks.xml"
+            ]
+        ]
+    }
+}
